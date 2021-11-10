@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Arsenal:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400&display=swap"
+        rel="stylesheet">
+
+    <title>Федерация Шахмат</title>
+
+    <link rel="stylesheet" href='./css/reset.css'>
+    <link rel="stylesheet" href='./css/style.css'>
+    <link rel="stylesheet" href='./css/media.css'>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header__logo">
+                <img src="./source/header/logo.png" alt="Логотип">
+            </div>
+            <div class="header__content">
+                <div class="header__top">
+                    <div class="header__social">
+                        <a href="#">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M11.9873 0H4C1.80317 0 0 1.80317 0 4.0127V12C0 14.1968 1.80317 16 4 16H11.9873C14.1968 16 16 14.1968 16 11.9873V4.0127C16 1.80317 14.1968 0 11.9873 0ZM10.146 8H8.63492V12.9524H6.73016V8H5.71429V5.96825H6.60318V5.10476C6.60318 4.29206 7.00952 3.00952 8.72381 3.00952H10.2857V4.69841H9.18095C9.00318 4.69841 8.76191 4.8127 8.76191 5.20635V5.96825H10.3238L10.146 8Z"
+                                    fill="#EAB367" />
+                            </svg>
+                        </a>
+                        <a href="#">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M4 0C1.79089 0 0 1.79083 0 4V12C0 14.2092 1.79089 16 4 16H12C14.2091 16 16 14.2092 16 12V4C16 1.79083 14.2091 0 12 0H4ZM12.9131 10.2349C12.9236 10.2522 12.9349 10.2739 12.947 10.2999C12.9528 10.3123 12.9585 10.3291 12.9642 10.3504C12.9707 10.3741 12.9772 10.4033 12.9836 10.4379C12.9956 10.5039 12.9949 10.5629 12.981 10.615C12.967 10.667 12.9237 10.7148 12.8508 10.7582C12.778 10.8015 12.6754 10.8233 12.5436 10.8233L11.2108 10.8441C11.1273 10.8615 11.0302 10.8527 10.9193 10.8181C10.8082 10.7833 10.7179 10.7452 10.6484 10.7035L10.5443 10.641C10.4402 10.568 10.3187 10.457 10.1799 10.3077C10.0828 10.2034 9.99536 10.1063 9.91785 10.0163C9.88452 9.97766 9.85303 9.94031 9.82324 9.9043C9.72424 9.78461 9.61841 9.6839 9.50562 9.60229C9.3927 9.52063 9.29468 9.49377 9.2113 9.52155C9.20642 9.52319 9.20081 9.52539 9.19434 9.5282C9.18713 9.53131 9.17896 9.5351 9.1698 9.53973C9.15247 9.54846 9.1228 9.57367 9.08118 9.6153C9.03967 9.6568 9.00232 9.70807 8.96924 9.7688C8.93616 9.82959 8.90662 9.91986 8.88074 10.0396C8.85474 10.1593 8.84338 10.2938 8.84692 10.443C8.84692 10.495 8.84082 10.5428 8.82874 10.5862C8.81665 10.6295 8.80359 10.6617 8.78967 10.6824L8.76892 10.7085C8.70642 10.7744 8.61438 10.8126 8.49304 10.8231H7.89417C7.64771 10.8369 7.39441 10.8083 7.13403 10.7371C6.87366 10.6659 6.64551 10.5739 6.44934 10.4612C6.2533 10.3483 6.07446 10.2338 5.91309 10.1174C5.75171 10.0012 5.62927 9.90143 5.54602 9.81812L5.41577 9.69318C5.3811 9.65845 5.33337 9.60651 5.27258 9.53699C5.21191 9.46759 5.08777 9.30963 4.90039 9.06317C4.81189 8.94678 4.72412 8.8269 4.63708 8.70355C4.53992 8.56573 4.44373 8.42352 4.34851 8.27698C4.16797 7.99945 3.95532 7.63318 3.71069 7.17847C3.46594 6.72375 3.2395 6.25171 3.03125 5.76227C3.01038 5.70679 3 5.65991 3 5.6217C3 5.5835 3.00525 5.55573 3.01562 5.53839L3.0365 5.50714C3.08862 5.44122 3.1875 5.4082 3.33325 5.4082L4.75989 5.39783C4.80164 5.40472 4.84143 5.41595 4.87964 5.43164C4.91785 5.44733 4.94556 5.46204 4.96289 5.47589L4.98901 5.49158C5.04456 5.52972 5.08618 5.58527 5.11389 5.65814C5.18335 5.83167 5.26318 6.01135 5.35339 6.19708C5.39905 6.29089 5.4397 6.37341 5.47559 6.44464C5.51074 6.5144 5.54114 6.5733 5.56689 6.6214L5.65015 6.7724C5.75085 6.98065 5.84802 7.16113 5.94165 7.31384C6.03552 7.46655 6.11963 7.58545 6.19434 7.67053C6.26892 7.75562 6.34094 7.82239 6.41028 7.87097C6.47974 7.91962 6.5387 7.94391 6.5874 7.94391C6.63586 7.94391 6.68286 7.93512 6.72791 7.91785C6.73181 7.91589 6.73633 7.91223 6.74133 7.90692C6.74524 7.90289 6.74939 7.89783 6.75391 7.89178C6.7644 7.87793 6.78516 7.83978 6.81641 7.77728C6.84766 7.71484 6.87109 7.63324 6.88672 7.53259C6.90247 7.43195 6.91882 7.29138 6.93616 7.11084C6.95349 6.93036 6.95349 6.71344 6.93616 6.46002C6.92932 6.32123 6.9137 6.19452 6.8894 6.08002C6.86511 5.96552 6.84082 5.88562 6.81641 5.84052L6.78516 5.77795C6.69836 5.65997 6.5509 5.58533 6.34265 5.55414C6.31897 5.55054 6.31018 5.53735 6.31604 5.51465C6.32141 5.49402 6.33899 5.46552 6.36877 5.4292C6.40112 5.39307 6.43555 5.36108 6.47205 5.33325C6.50208 5.31036 6.53357 5.29028 6.56653 5.27307C6.75049 5.1828 7.16541 5.14111 7.81091 5.14801C8.09558 5.15155 8.32983 5.17407 8.51392 5.2157C8.58325 5.23309 8.64148 5.25653 8.68823 5.28601C8.73511 5.31555 8.77063 5.35718 8.79504 5.41095C8.81921 5.46484 8.83765 5.52039 8.84961 5.57758C8.86169 5.63489 8.8678 5.71387 8.8678 5.81451C8.8678 5.91516 8.86621 6.01068 8.86267 6.10089L8.85815 6.21979L8.84961 6.4679C8.84436 6.62238 8.8418 6.76556 8.8418 6.89746C8.8418 6.93567 8.84021 7.00848 8.83655 7.11615C8.83313 7.22375 8.83228 7.30713 8.83398 7.36609C8.83508 7.40216 8.83777 7.44232 8.84204 7.48682C8.84473 7.51514 8.84814 7.54517 8.85217 7.57697C8.86255 7.65851 8.88257 7.72626 8.91211 7.78003C8.94153 7.8338 8.98059 7.87634 9.02917 7.90759C9.05701 7.91449 9.08655 7.92145 9.1178 7.92841C9.14893 7.93542 9.19409 7.91632 9.25305 7.87115C9.31213 7.82599 9.37805 7.76617 9.45093 7.69153C9.5238 7.61694 9.61401 7.50061 9.72168 7.34271C9.82935 7.18481 9.94727 6.99823 10.0757 6.78302C10.2841 6.42206 10.4696 6.03156 10.6329 5.61157C10.6467 5.57684 10.6641 5.54639 10.6848 5.52045C10.7057 5.49438 10.7247 5.4762 10.7422 5.46582L10.7628 5.45013L10.7889 5.43713L10.8567 5.42145C10.9019 5.41101 10.9365 5.41022 10.9608 5.41882L12.4603 5.40845C12.51 5.4021 12.5564 5.39862 12.5996 5.39813C12.674 5.39722 12.7386 5.40497 12.7936 5.42145C12.8802 5.44751 12.9341 5.47614 12.955 5.50739L12.986 5.55933C13.0658 5.78149 12.8054 6.29163 12.205 7.09003C12.1217 7.20111 12.0089 7.34857 11.8666 7.53259C11.5958 7.87976 11.4396 8.10699 11.3979 8.21454C11.339 8.35699 11.3632 8.4975 11.4709 8.63635C11.4958 8.66711 11.5354 8.71033 11.5895 8.76587C11.6633 8.84186 11.7644 8.94104 11.8927 9.06335H11.8979L11.9031 9.0686L11.9083 9.07373L11.9187 9.08411C12.4081 9.53882 12.7396 9.92236 12.9131 10.2349Z"
+                                    fill="#EAB367" />
+                            </svg>
+                        </a>
+                        <a href="#">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M9.40625 8C9.40625 8.77661 8.77661 9.40625 8 9.40625C7.22339 9.40625 6.59375 8.77661 6.59375 8C6.59375 7.22339 7.22339 6.59375 8 6.59375C8.77661 6.59375 9.40625 7.22339 9.40625 8Z"
+                                    fill="#EAB367" />
+                                <path
+                                    d="M10.375 3.75H5.625C4.59106 3.75 3.75 4.59106 3.75 5.625V10.375C3.75 11.4089 4.59106 12.25 5.625 12.25H10.375C11.4089 12.25 12.25 11.4089 12.25 10.375V5.625C12.25 4.59106 11.4089 3.75 10.375 3.75ZM8 10.3438C6.70764 10.3438 5.65625 9.29236 5.65625 8C5.65625 6.70764 6.70764 5.65625 8 5.65625C9.29236 5.65625 10.3438 6.70764 10.3438 8C10.3438 9.29236 9.29236 10.3438 8 10.3438ZM10.6875 5.78125C10.4286 5.78125 10.2188 5.57141 10.2188 5.3125C10.2188 5.05359 10.4286 4.84375 10.6875 4.84375C10.9464 4.84375 11.1562 5.05359 11.1562 5.3125C11.1562 5.57141 10.9464 5.78125 10.6875 5.78125Z"
+                                    fill="#EAB367" />
+                                <path
+                                    d="M11.7812 0H4.21875C1.89258 0 0 1.89258 0 4.21875V11.7812C0 14.1074 1.89258 16 4.21875 16H11.7812C14.1074 16 16 14.1074 16 11.7812V4.21875C16 1.89258 14.1074 0 11.7812 0ZM13.1875 10.375C13.1875 11.9258 11.9258 13.1875 10.375 13.1875H5.625C4.07422 13.1875 2.8125 11.9258 2.8125 10.375V5.625C2.8125 4.07422 4.07422 2.8125 5.625 2.8125H10.375C11.9258 2.8125 13.1875 4.07422 13.1875 5.625V10.375Z"
+                                    fill="#EAB367" />
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="header__phone">
+                        <a href="tel:8-963-500-77-03">
+                            <svg width="17" height="17" viewBox="0 0 17 17" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M14.1737 10.8942C13.3025 10.8942 12.4596 10.7525 11.6733 10.4975C11.4254 10.4125 11.1492 10.4762 10.9579 10.6675L9.84583 12.0629C7.84125 11.1067 5.96417 9.30042 4.96542 7.225L6.34667 6.04917C6.53792 5.85083 6.59458 5.57458 6.51667 5.32667C6.25458 4.54042 6.12 3.6975 6.12 2.82625C6.12 2.44375 5.80125 2.125 5.41875 2.125H2.96792C2.58542 2.125 2.125 2.295 2.125 2.82625C2.125 9.40667 7.60042 14.875 14.1737 14.875C14.6767 14.875 14.875 14.4287 14.875 14.0392V11.5954C14.875 11.2129 14.5562 10.8942 14.1737 10.8942Z"
+                                    fill="#EAB367" />
+                            </svg>
+                            <p>8-963-500-77-03</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="header__bottom">
+                    <nav class="header__nav">
+                        <ul class="header__navList">
+                            <li><span>О проекте</span></li>
+                            <li><span>Педагоги</span></li>
+                            <li><span>Новости</span></li>
+                            <li><span>Мероприятия</span></li>
+                            <li><span>Вопрос-Ответ</span></li>
+                            <li><span>Фотогалерея</span></li>
+                            <li><span>Документы</span></li>
+                            <li><span>Контакты</span></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="firstscreen">
+            <div class="container">
+                <div class="firstscreen__content">
+                    <h1>
+                        Федерация шахмат Алтайского края
+                    </h1>
+                    <button class="main__btn firstscreen__btn">
+                        Записаться на занятие
+                    </button>
+                </div>
+            </div>
+            <img src="./source/firstscreen/logo.png" alt="Логотип" class="firstscreen__bg">
+        </section>
+
+        <section class="about">
+            <div class="container">
+                <div class="about__content">
+                    <h2>О проекте</h2>
+                    <div class="about__txt">
+                        <p>«Академия шахмат Алтайского края» создана в 2018 году при организационной поддержке Федерации
+                        шахмат Алтайского края.</p>
+                        <p>Миссия Академии заключается в гармоничном личностном развитии детей и взрослых через шахматную
+                        культуру, формирование спортсмена, нацеленного на достижение высоких результатов.</p>
+                        <p>Ее главная задача заключается в популяризации шахмат, как вида досуга, среди детей и взрослых. а
+                        также в повышении спортивного мастерства наиболее одаренных юношей и девушек региона.</p>
+                        <p>Занятия в Академии проводятся регулярно и на платной основе – как для взрослых, сформировавшихся
+                        шахматистов, так и для начинающих любителей древней игры.Они позволят не только научиться
+                        играть, но и развить в себе такие навыки, как аналитическое и логическое мышление, расчет
+                        вариантов, оценка позиции, тренировка памяти и выносливости.</p>
+                        <p>Преподаватели академии – тренеры с большим опытом работы: Дмитрий Юрьевич Косачев, Виктор
+                        Александрович Эртель, Николай Яковлевич Пастухов, Анатолий Андреевич Сухоруков, Максим
+                        Викторович Герасимюк, Наталья Анатольевна Гаркуша и Наталья Евгеньевна Шаталова.</p>
+                        <p>Набор в группы осуществляется по следующим направлениям: 1) школа раннего развития (от 4 до 6
+                        лет), школьники (от 7 до 18 лет) и взрослые. Занятия проходят в будние и выходные дни по
+                        расписанию.</p>
+                    </div>
+                </div>
+                <div class="about__pic">
+                    <img src="./source/about/pic.png" alt="Картинка">
+                </div>
+            </div>
+        </section>
+
+        <section class="pedgogs">
+            <div class="container">
+                <h2>
+                    Педагоги
+                </h2>
+                <div class="pedgogs__content">
+                    <div class="pedgogs__control">
+                        <div class="pedgogs__ra">
+                            <p class="pedgogs__selectTxt">Выберите район</p>
+                            <div class="pedgogs__selector">
+                                <div class="pedgogs__sity">
+                                    <p>Барнаул</p>
+                                </div>
+                                <div class="pedgogs__sityArrow">
+                                    <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1.41 0.589966L6 5.16997L10.59 0.589966L12 1.99997L6 7.99997L0 1.99997L1.41 0.589966Z" fill="#5E747D"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pedgogs__arrows">
+                            <div class="controlArr pedgogs__arrowsItem">
+                                <svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7.41003 1.41L2.83003 6L7.41003 10.59L6.00003 12L3.407e-05 6L6.00003 -6.16331e-08L7.41003 1.41Z" fill="white"/>
+                                </svg>                                    
+                            </div>
+                            <div class="controlArr pedgogs__arrowsItem">
+                                <svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M0.589966 10.59L5.16997 6L0.589965 1.41L1.99997 -6.16331e-08L7.99997 6L1.99997 12L0.589966 10.59Z" fill="white"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pedgogs__blocks">
+                        <div class="pedgogs__block">
+                            <div class="pedgogs__blockImg">
+                                <img src="./source/pedagogs/pep.jpg" alt="Косачев Дмитрий Юрьевич">
+                            </div>
+                            <div class="pedgogs__blockTxt">
+                                <h3>Косачев Дмитрий Юрьевич</h3>
+                                <p>Директор Академии Шахмат Алтайского Края. Кандидат в мастера спорта по шахматам. Член Президиума Федерации шахмат Алтайского края. Председатель детско-юношеской комиссии. Ученики становились победителями первенства Барнаула, детских этапов кубков России и призерами Сибирского федерального округа. Высшее педагогическое образование. Тренерский стаж: 15 лет.</p>
+                            </div>
+                            <div class="pedgogs__blockAdd">
+                                <span class="add colorMain">Подробнее</span>
+                            </div>
+                        </div>
+                        <div class="pedgogs__block">
+                            <div class="pedgogs__blockImg">
+                                <img src="./source/pedagogs/pep.jpg" alt="Косачев Дмитрий Юрьевич">
+                            </div>
+                            <div class="pedgogs__blockTxt">
+                                <h3>Косачев Дмитрий Юрьевич</h3>
+                                <p>Директор Академии Шахмат Алтайского Края. Кандидат в мастера спорта по шахматам. Член Президиума Федерации шахмат Алтайского края. Председатель детско-юношеской комиссии. Ученики становились победителями первенства Барнаула, детских этапов кубков России и призерами Сибирского федерального округа. Высшее педагогическое образование. Тренерский стаж: 15 лет.</p>
+                            </div>
+                            <div class="pedgogs__blockAdd">
+                                <span class="add colorMain">Подробнее</span>
+                            </div>
+                        </div>
+                        <div class="pedgogs__block">
+                            <div class="pedgogs__blockImg">
+                                <img src="./source/pedagogs/pep.jpg" alt="Косачев Дмитрий Юрьевич">
+                            </div>
+                            <div class="pedgogs__blockTxt">
+                                <h3>Косачев Дмитрий Юрьевич</h3>
+                                <p>Директор Академии Шахмат Алтайского Края. Кандидат в мастера спорта по шахматам. Член Президиума Федерации шахмат Алтайского края. Председатель детско-юношеской комиссии. Ученики становились победителями первенства Барнаула, детских этапов кубков России и призерами Сибирского федерального округа. Высшее педагогическое образование. Тренерский стаж: 15 лет.</p>
+                            </div>
+                            <div class="pedgogs__blockAdd">
+                                <span class="add colorMain">Подробнее</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="news">
+            <div class="container">
+                <h2>Новости</h2>
+                <div class="news__content">
+                    <div class="news__block">
+                        <div class="news__blockPic">
+                            <img src="./source/news/ex.png" alt="">
+                        </div>
+                        <div class="news__blockTxt">
+                            <p class="news__time">23 октября 2021 г.</p>
+                            <h3>Как Мамонтово становится сельским центром шахмат</h3>
+                            <p class="add newsAdd colorMain">Подробнее</p>
+                        </div>
+                    </div>
+
+                    <div class="news__block">
+                        <div class="news__blockPic">
+                            <img src="./source/news/ex.png" alt="">
+                        </div>
+                        <div class="news__blockTxt">
+                            <p class="news__time">23 октября 2021 г.</p>
+                            <h3>Как Мамонтово становится сельским центром шахмат</h3>
+                            <p class="add newsAdd colorMain">Подробнее</p>
+                        </div>
+                    </div>
+
+                    <div class="news__block">
+                        <div class="news__blockPic">
+                            <img src="./source/news/ex.png" alt="">
+                        </div>
+                        <div class="news__blockTxt">
+                            <p class="news__time">23 октября 2021 г.</p>
+                            <h3>Как Мамонтово становится сельским центром шахмат</h3>
+                            <p class="add newsAdd colorMain">Подробнее</p>
+                        </div>
+                    </div>
+
+                    <div class="news__block">
+                        <div class="news__blockPic">
+                            <img src="./source/news/ex.png" alt="">
+                        </div>
+                        <div class="news__blockTxt">
+                            <p class="news__time">23 октября 2021 г.</p>
+                            <h3>Как Мамонтово становится сельским центром шахмат</h3>
+                            <p class="add newsAdd colorMain">Подробнее</p>
+                        </div>
+                    </div>
+
+                    <div class="news__block">
+                        <div class="news__blockPic">
+                            <img src="./source/news/ex.png" alt="">
+                        </div>
+                        <div class="news__blockTxt">
+                            <p class="news__time">23 октября 2021 г.</p>
+                            <h3>Как Мамонтово становится сельским центром шахмат</h3>
+                            <p class="add newsAdd colorMain">Подробнее</p>
+                        </div>
+                    </div>
+
+                    <div class="news__block">
+                        <div class="news__blockPic">
+                            <img src="./source/news/ex.png" alt="">
+                        </div>
+                        <div class="news__blockTxt">
+                            <p class="news__time">23 октября 2021 г.</p>
+                            <h3>Как Мамонтово становится сельским центром шахмат</h3>
+                            <p class="add newsAdd colorMain">Подробнее</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="merop">
+            <div class="container">
+                <div class="merop__top">
+                    <h2>Анонсы мероприятий</h2>
+                    <div class="pedgogs__arrows">
+                        <div class="controlArr merop__arrowsItem">
+                            <svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7.41003 1.41L2.83003 6L7.41003 10.59L6.00003 12L3.407e-05 6L6.00003 -6.16331e-08L7.41003 1.41Z" fill="white"/>
+                            </svg>                                    
+                        </div>
+                        <div class="controlArr merop__arrowsItem">
+                            <svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0.589966 10.59L5.16997 6L0.589965 1.41L1.99997 -6.16331e-08L7.99997 6L1.99997 12L0.589966 10.59Z" fill="white"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="merop__content">
+                    <div class="otherBlock merop__block">
+                        <div class="merop__loc">
+                            <span class="merop__locete">г. Барнаул, краевой шахматный клуб,</span><br>
+                            <span class="merop__date">28 ноября 2021 г.</span>
+                        </div>
+
+                        <h3>Командный чемпионат Алтайского края 2021 года по быстрым шахматам</h3>
+
+                        <p class="add meropAdd colorMain">Подробнее</p>
+                    </div>
+
+                    <div class="otherBlock merop__block">
+                        <div class="merop__loc">
+                            <span class="merop__locete">г. Барнаул, краевой шахматный клуб,</span><br>
+                            <span class="merop__date">28 ноября 2021 г.</span>
+                        </div>
+
+                        <h3>Командный чемпионат Алтайского края 2021 года по быстрым шахматам</h3>
+
+                        <p class="meropAdd colorMain">Подробнее</p>
+                    </div>
+
+                    <div class="otherBlock merop__block">
+                        <div class="merop__loc">
+                            <span class="merop__locete">г. Барнаул, краевой шахматный клуб,</span><br>
+                            <span class="merop__date">28 ноября 2021 г.</span>
+                        </div>
+
+                        <h3>Командный чемпионат Алтайского края 2021 года по быстрым шахматам</h3>
+
+                        <p class="add meropAdd colorMain">Подробнее</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="foto">
+            <div class="container">
+                <div class="foto__top">
+                    <h2>Фотогалерея</h2>
+                    <div class="foto__arrows">
+                        <div class="controlArr foto__arrowsItem">
+                            <svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7.41003 1.41L2.83003 6L7.41003 10.59L6.00003 12L3.407e-05 6L6.00003 -6.16331e-08L7.41003 1.41Z" fill="white"/>
+                            </svg>                                    
+                        </div>
+                        <div class="controlArr foto__arrowsItem">
+                            <svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0.589966 10.59L5.16997 6L0.589965 1.41L1.99997 -6.16331e-08L7.99997 6L1.99997 12L0.589966 10.59Z" fill="white"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="foto__content">
+                    <div class="foto__block foto__blockVertical">
+                        <img src="./source/photo/ex.png" alt="">
+                    </div>
+
+                    <div class="foto__block foto__blockVertical">
+                        <img src="./source/photo/ex.png" alt="">
+                    </div>
+
+                    <div class="foto__block foto__blockVertical">
+                        <img src="./source/photo/ex.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq">
+            <div class="container">
+                <h2>Вопрос-Ответ</h2>
+
+                <div class="faq__content">
+                    <div class="faq__block">
+                        <div class="faq__blockTop">
+                            <h3>Вопрос</h3>
+                            <div class="faq__blockBtn">
+                                <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M10.59 7.41016L6 2.83016L1.41 7.41016L-1.23266e-07 6.00016L6 0.000156927L12 6.00016L10.59 7.41016Z" fill="white"/>
+                                </svg>                                    
+                            </div>
+                        </div>
+                        <div class="faq__blockBottom">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae, ut sit nec vitae amet id. Ultrices enim morbi rhoncus, aenean. Cursus tortor vitae semper semper laoreet bibendum faucibus faucibus vel. Urna, interdum turpis eget pretium. Nisl mauris tellus sit accumsan. Suspendisse diam facilisis cursus ultricies.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq__block">
+                        <div class="faq__blockTop">
+                            <h3>Вопрос</h3>
+                            <div class="faq__blockBtn">
+                                <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M10.59 7.41016L6 2.83016L1.41 7.41016L-1.23266e-07 6.00016L6 0.000156927L12 6.00016L10.59 7.41016Z" fill="white"/>
+                                </svg>                                    
+                            </div>
+                        </div>
+                        <div class="faq__blockBottom">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae, ut sit nec vitae amet id. Ultrices enim morbi rhoncus, aenean. Cursus tortor vitae semper semper laoreet bibendum faucibus faucibus vel. Urna, interdum turpis eget pretium. Nisl mauris tellus sit accumsan. Suspendisse diam facilisis cursus ultricies.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq__block">
+                        <div class="faq__blockTop">
+                            <h3>Вопрос</h3>
+                            <div class="faq__blockBtn">
+                                <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M10.59 7.41016L6 2.83016L1.41 7.41016L-1.23266e-07 6.00016L6 0.000156927L12 6.00016L10.59 7.41016Z" fill="white"/>
+                                </svg>                                    
+                            </div>
+                        </div>
+                        <div class="faq__blockBottom">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae, ut sit nec vitae amet id. Ultrices enim morbi rhoncus, aenean. Cursus tortor vitae semper semper laoreet bibendum faucibus faucibus vel. Urna, interdum turpis eget pretium. Nisl mauris tellus sit accumsan. Suspendisse diam facilisis cursus ultricies.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq__block">
+                        <div class="faq__blockTop">
+                            <h3>Вопрос</h3>
+                            <div class="faq__blockBtn">
+                                <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M10.59 7.41016L6 2.83016L1.41 7.41016L-1.23266e-07 6.00016L6 0.000156927L12 6.00016L10.59 7.41016Z" fill="white"/>
+                                </svg>                                    
+                            </div>
+                        </div>
+                        <div class="faq__blockBottom">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae, ut sit nec vitae amet id. Ultrices enim morbi rhoncus, aenean. Cursus tortor vitae semper semper laoreet bibendum faucibus faucibus vel. Urna, interdum turpis eget pretium. Nisl mauris tellus sit accumsan. Suspendisse diam facilisis cursus ultricies.</p>
+                        </div>
+                    </div>
+
+                    
+                </div>
+            </div>
+        </section>
+
+        <section class="docs">
+            <div class="container">
+                <h2>Документация</h2>
+
+                <div class="docs__content">
+                    <a href="#" class="otherBlock docs__block">
+                        <div class="docs__pic">
+                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <mask id="mask0_53:12" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="40" height="40">
+                                <rect width="40" height="40" fill="url(#pattern0)"/>
+                                </mask>
+                                <g mask="url(#mask0_53:12)">
+                                <rect x="-2.10526" y="-1.05273" width="44.2105" height="44.2105" fill="#EAB367"/>
+                                </g>
+                                <defs>
+                                <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                <use xlink:href="#image0_53:12" transform="scale(0.00195312)"/>
+                                </pattern>
+                                <image id="image0_53:12" width="512" height="512" xlink:href="data:image/png;base64,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"/>
+                                </defs>
+                            </svg>                                
+                        </div>
+
+                        <div class="docs__txt">
+                            <p>Письмо РШФ Губернатору Алтайского края Александру Карлину (4.00 Kb)</p>
+                        </div>
+                    </a>
+
+                    <a href="#" class="otherBlock docs__block">
+                        <div class="docs__pic">
+                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <mask id="mask0_53:12" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="40" height="40">
+                                <rect width="40" height="40" fill="url(#pattern0)"/>
+                                </mask>
+                                <g mask="url(#mask0_53:12)">
+                                <rect x="-2.10526" y="-1.05273" width="44.2105" height="44.2105" fill="#EAB367"/>
+                                </g>
+                                <defs>
+                                <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                <use xlink:href="#image0_53:12" transform="scale(0.00195312)"/>
+                                </pattern>
+                                <image id="image0_53:12" width="512" height="512" xlink:href="data:image/png;base64,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"/>
+                                </defs>
+                            </svg>                                
+                        </div>
+
+                        <div class="docs__txt">
+                            <p>Письмо РШФ Губернатору Алтайского края Александру Карлину (4.00 Kb)</p>
+                        </div>
+                    </a>
+
+                    <a href="#" class="otherBlock docs__block">
+                        <div class="docs__pic">
+                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <mask id="mask0_53:12" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="40" height="40">
+                                <rect width="40" height="40" fill="url(#pattern0)"/>
+                                </mask>
+                                <g mask="url(#mask0_53:12)">
+                                <rect x="-2.10526" y="-1.05273" width="44.2105" height="44.2105" fill="#EAB367"/>
+                                </g>
+                                <defs>
+                                <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                <use xlink:href="#image0_53:12" transform="scale(0.00195312)"/>
+                                </pattern>
+                                <image id="image0_53:12" width="512" height="512" xlink:href="data:image/png;base64,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"/>
+                                </defs>
+                            </svg>                                
+                        </div>
+
+                        <div class="docs__txt">
+                            <p>Письмо РШФ Губернатору Алтайского края Александру Карлину (4.00 Kb)</p>
+                        </div>
+                    </a>
+
+                    <a href="#" class="otherBlock docs__block">
+                        <div class="docs__pic">
+                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <mask id="mask0_53:12" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="40" height="40">
+                                <rect width="40" height="40" fill="url(#pattern0)"/>
+                                </mask>
+                                <g mask="url(#mask0_53:12)">
+                                <rect x="-2.10526" y="-1.05273" width="44.2105" height="44.2105" fill="#EAB367"/>
+                                </g>
+                                <defs>
+                                <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                <use xlink:href="#image0_53:12" transform="scale(0.00195312)"/>
+                                </pattern>
+                                <image id="image0_53:12" width="512" height="512" xlink:href="data:image/png;base64,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"/>
+                                </defs>
+                            </svg>                                
+                        </div>
+
+                        <div class="docs__txt">
+                            <p>Письмо РШФ Губернатору Алтайского края Александру Карлину (4.00 Kb)</p>
+                        </div>
+                    </a>
+
+
+                </div>
+            </div>
+        </section>
+
+        <section class="contacts">
+            <div class="container">
+                <h2>Контакты</h2>
+                <div class="contacts__content">
+                    <div class="contacts__block">
+                        <h3>Президент федерации:</h3>
+                        <div class="contacts__blockContent">
+                            <p>Поломошнов Артем Анатольевич</p>
+                            <p>Телефон:  <a>+7 905 084 5777.</a></p>
+                            <p>E-mail: <a>polomoshnov@chess22.ru</a></p>
+                        </div>
+                    </div>
+                    <div class="contacts__block">
+                        <h3>Телефон федерации:</h3>
+                        <div class="contacts__blockContent">
+                            <a class="contacts__item" href="tel:8-963-500-77-03">
+                                <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M14.1737 10.8942C13.3025 10.8942 12.4596 10.7525 11.6733 10.4975C11.4254 10.4125 11.1492 10.4762 10.9579 10.6675L9.84583 12.0629C7.84125 11.1067 5.96417 9.30042 4.96542 7.225L6.34667 6.04917C6.53792 5.85083 6.59458 5.57458 6.51667 5.32667C6.25458 4.54042 6.12 3.6975 6.12 2.82625C6.12 2.44375 5.80125 2.125 5.41875 2.125H2.96792C2.58542 2.125 2.125 2.295 2.125 2.82625C2.125 9.40667 7.60042 14.875 14.1737 14.875C14.6767 14.875 14.875 14.4287 14.875 14.0392V11.5954C14.875 11.2129 14.5562 10.8942 14.1737 10.8942Z" fill="#EAB367"/>
+                                </svg>
+                                <p>8-963-500-77-03</p>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="contacts__block">
+                        <h3>Почта федерации:</h3>
+                        <div class="contacts__blockContent">
+                            <a class="contacts__item" href="mailto:info@chess22.ru">
+                                <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M14.1667 2.83325H2.83334C2.05417 2.83325 1.42376 3.47075 1.42376 4.24992L1.41667 12.7499C1.41667 13.5291 2.05417 14.1666 2.83334 14.1666H14.1667C14.9458 14.1666 15.5833 13.5291 15.5833 12.7499V4.24992C15.5833 3.47075 14.9458 2.83325 14.1667 2.83325ZM14.1667 5.66658L8.50001 9.20825L2.83334 5.66658V4.24992L8.50001 7.79158L14.1667 4.24992V5.66658Z" fill="#EAB367"/>
+                                    </svg>
+                                <p>info@chess22.ru</p>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="contacts__block">
+                        <h3>Социальные сети</h3>
+                        <div class="contacts__blockContent">
+                            <div class="contacts__social">
+                                <a href="#">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M11.9873 0H4C1.80317 0 0 1.80317 0 4.0127V12C0 14.1968 1.80317 16 4 16H11.9873C14.1968 16 16 14.1968 16 11.9873V4.0127C16 1.80317 14.1968 0 11.9873 0ZM10.146 8H8.63492V12.9524H6.73016V8H5.71429V5.96825H6.60318V5.10476C6.60318 4.29206 7.00952 3.00952 8.72381 3.00952H10.2857V4.69841H9.18095C9.00318 4.69841 8.76191 4.8127 8.76191 5.20635V5.96825H10.3238L10.146 8Z"
+                                            fill="#EAB367" />
+                                    </svg>
+                                </a>
+                                <a href="#">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M4 0C1.79089 0 0 1.79083 0 4V12C0 14.2092 1.79089 16 4 16H12C14.2091 16 16 14.2092 16 12V4C16 1.79083 14.2091 0 12 0H4ZM12.9131 10.2349C12.9236 10.2522 12.9349 10.2739 12.947 10.2999C12.9528 10.3123 12.9585 10.3291 12.9642 10.3504C12.9707 10.3741 12.9772 10.4033 12.9836 10.4379C12.9956 10.5039 12.9949 10.5629 12.981 10.615C12.967 10.667 12.9237 10.7148 12.8508 10.7582C12.778 10.8015 12.6754 10.8233 12.5436 10.8233L11.2108 10.8441C11.1273 10.8615 11.0302 10.8527 10.9193 10.8181C10.8082 10.7833 10.7179 10.7452 10.6484 10.7035L10.5443 10.641C10.4402 10.568 10.3187 10.457 10.1799 10.3077C10.0828 10.2034 9.99536 10.1063 9.91785 10.0163C9.88452 9.97766 9.85303 9.94031 9.82324 9.9043C9.72424 9.78461 9.61841 9.6839 9.50562 9.60229C9.3927 9.52063 9.29468 9.49377 9.2113 9.52155C9.20642 9.52319 9.20081 9.52539 9.19434 9.5282C9.18713 9.53131 9.17896 9.5351 9.1698 9.53973C9.15247 9.54846 9.1228 9.57367 9.08118 9.6153C9.03967 9.6568 9.00232 9.70807 8.96924 9.7688C8.93616 9.82959 8.90662 9.91986 8.88074 10.0396C8.85474 10.1593 8.84338 10.2938 8.84692 10.443C8.84692 10.495 8.84082 10.5428 8.82874 10.5862C8.81665 10.6295 8.80359 10.6617 8.78967 10.6824L8.76892 10.7085C8.70642 10.7744 8.61438 10.8126 8.49304 10.8231H7.89417C7.64771 10.8369 7.39441 10.8083 7.13403 10.7371C6.87366 10.6659 6.64551 10.5739 6.44934 10.4612C6.2533 10.3483 6.07446 10.2338 5.91309 10.1174C5.75171 10.0012 5.62927 9.90143 5.54602 9.81812L5.41577 9.69318C5.3811 9.65845 5.33337 9.60651 5.27258 9.53699C5.21191 9.46759 5.08777 9.30963 4.90039 9.06317C4.81189 8.94678 4.72412 8.8269 4.63708 8.70355C4.53992 8.56573 4.44373 8.42352 4.34851 8.27698C4.16797 7.99945 3.95532 7.63318 3.71069 7.17847C3.46594 6.72375 3.2395 6.25171 3.03125 5.76227C3.01038 5.70679 3 5.65991 3 5.6217C3 5.5835 3.00525 5.55573 3.01562 5.53839L3.0365 5.50714C3.08862 5.44122 3.1875 5.4082 3.33325 5.4082L4.75989 5.39783C4.80164 5.40472 4.84143 5.41595 4.87964 5.43164C4.91785 5.44733 4.94556 5.46204 4.96289 5.47589L4.98901 5.49158C5.04456 5.52972 5.08618 5.58527 5.11389 5.65814C5.18335 5.83167 5.26318 6.01135 5.35339 6.19708C5.39905 6.29089 5.4397 6.37341 5.47559 6.44464C5.51074 6.5144 5.54114 6.5733 5.56689 6.6214L5.65015 6.7724C5.75085 6.98065 5.84802 7.16113 5.94165 7.31384C6.03552 7.46655 6.11963 7.58545 6.19434 7.67053C6.26892 7.75562 6.34094 7.82239 6.41028 7.87097C6.47974 7.91962 6.5387 7.94391 6.5874 7.94391C6.63586 7.94391 6.68286 7.93512 6.72791 7.91785C6.73181 7.91589 6.73633 7.91223 6.74133 7.90692C6.74524 7.90289 6.74939 7.89783 6.75391 7.89178C6.7644 7.87793 6.78516 7.83978 6.81641 7.77728C6.84766 7.71484 6.87109 7.63324 6.88672 7.53259C6.90247 7.43195 6.91882 7.29138 6.93616 7.11084C6.95349 6.93036 6.95349 6.71344 6.93616 6.46002C6.92932 6.32123 6.9137 6.19452 6.8894 6.08002C6.86511 5.96552 6.84082 5.88562 6.81641 5.84052L6.78516 5.77795C6.69836 5.65997 6.5509 5.58533 6.34265 5.55414C6.31897 5.55054 6.31018 5.53735 6.31604 5.51465C6.32141 5.49402 6.33899 5.46552 6.36877 5.4292C6.40112 5.39307 6.43555 5.36108 6.47205 5.33325C6.50208 5.31036 6.53357 5.29028 6.56653 5.27307C6.75049 5.1828 7.16541 5.14111 7.81091 5.14801C8.09558 5.15155 8.32983 5.17407 8.51392 5.2157C8.58325 5.23309 8.64148 5.25653 8.68823 5.28601C8.73511 5.31555 8.77063 5.35718 8.79504 5.41095C8.81921 5.46484 8.83765 5.52039 8.84961 5.57758C8.86169 5.63489 8.8678 5.71387 8.8678 5.81451C8.8678 5.91516 8.86621 6.01068 8.86267 6.10089L8.85815 6.21979L8.84961 6.4679C8.84436 6.62238 8.8418 6.76556 8.8418 6.89746C8.8418 6.93567 8.84021 7.00848 8.83655 7.11615C8.83313 7.22375 8.83228 7.30713 8.83398 7.36609C8.83508 7.40216 8.83777 7.44232 8.84204 7.48682C8.84473 7.51514 8.84814 7.54517 8.85217 7.57697C8.86255 7.65851 8.88257 7.72626 8.91211 7.78003C8.94153 7.8338 8.98059 7.87634 9.02917 7.90759C9.05701 7.91449 9.08655 7.92145 9.1178 7.92841C9.14893 7.93542 9.19409 7.91632 9.25305 7.87115C9.31213 7.82599 9.37805 7.76617 9.45093 7.69153C9.5238 7.61694 9.61401 7.50061 9.72168 7.34271C9.82935 7.18481 9.94727 6.99823 10.0757 6.78302C10.2841 6.42206 10.4696 6.03156 10.6329 5.61157C10.6467 5.57684 10.6641 5.54639 10.6848 5.52045C10.7057 5.49438 10.7247 5.4762 10.7422 5.46582L10.7628 5.45013L10.7889 5.43713L10.8567 5.42145C10.9019 5.41101 10.9365 5.41022 10.9608 5.41882L12.4603 5.40845C12.51 5.4021 12.5564 5.39862 12.5996 5.39813C12.674 5.39722 12.7386 5.40497 12.7936 5.42145C12.8802 5.44751 12.9341 5.47614 12.955 5.50739L12.986 5.55933C13.0658 5.78149 12.8054 6.29163 12.205 7.09003C12.1217 7.20111 12.0089 7.34857 11.8666 7.53259C11.5958 7.87976 11.4396 8.10699 11.3979 8.21454C11.339 8.35699 11.3632 8.4975 11.4709 8.63635C11.4958 8.66711 11.5354 8.71033 11.5895 8.76587C11.6633 8.84186 11.7644 8.94104 11.8927 9.06335H11.8979L11.9031 9.0686L11.9083 9.07373L11.9187 9.08411C12.4081 9.53882 12.7396 9.92236 12.9131 10.2349Z"
+                                            fill="#EAB367" />
+                                    </svg>
+                                </a>
+                                <a href="#">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M9.40625 8C9.40625 8.77661 8.77661 9.40625 8 9.40625C7.22339 9.40625 6.59375 8.77661 6.59375 8C6.59375 7.22339 7.22339 6.59375 8 6.59375C8.77661 6.59375 9.40625 7.22339 9.40625 8Z"
+                                            fill="#EAB367" />
+                                        <path
+                                            d="M10.375 3.75H5.625C4.59106 3.75 3.75 4.59106 3.75 5.625V10.375C3.75 11.4089 4.59106 12.25 5.625 12.25H10.375C11.4089 12.25 12.25 11.4089 12.25 10.375V5.625C12.25 4.59106 11.4089 3.75 10.375 3.75ZM8 10.3438C6.70764 10.3438 5.65625 9.29236 5.65625 8C5.65625 6.70764 6.70764 5.65625 8 5.65625C9.29236 5.65625 10.3438 6.70764 10.3438 8C10.3438 9.29236 9.29236 10.3438 8 10.3438ZM10.6875 5.78125C10.4286 5.78125 10.2188 5.57141 10.2188 5.3125C10.2188 5.05359 10.4286 4.84375 10.6875 4.84375C10.9464 4.84375 11.1562 5.05359 11.1562 5.3125C11.1562 5.57141 10.9464 5.78125 10.6875 5.78125Z"
+                                            fill="#EAB367" />
+                                        <path
+                                            d="M11.7812 0H4.21875C1.89258 0 0 1.89258 0 4.21875V11.7812C0 14.1074 1.89258 16 4.21875 16H11.7812C14.1074 16 16 14.1074 16 11.7812V4.21875C16 1.89258 14.1074 0 11.7812 0ZM13.1875 10.375C13.1875 11.9258 11.9258 13.1875 10.375 13.1875H5.625C4.07422 13.1875 2.8125 11.9258 2.8125 10.375V5.625C2.8125 4.07422 4.07422 2.8125 5.625 2.8125H10.375C11.9258 2.8125 13.1875 4.07422 13.1875 5.625V10.375Z"
+                                            fill="#EAB367" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contacts__block">
+                        <h3>Федерация шахмат Алтайского края</h3>
+                        <div class="contacts__blockContent">
+                           <a href="www.chess22.ru" class="contacts__site">
+                                <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                     <path d="M12.0417 2.125H4.95835C4.17919 2.125 3.54877 2.7625 3.54877 3.54167L3.54169 14.875L8.50002 12.75L13.4584 14.875V3.54167C13.4584 2.7625 12.8209 2.125 12.0417 2.125Z" fill="#EAB367"/>
+                                </svg>
+                               <p>www.chess22.ru</p>
+                           </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__left">
+                <div class="footer__part">
+                    <img src="./source/footer/shaFed.png" alt="">
+                    <img src="./source/footer/prezGrand.png" alt="">
+                    <img src="./source/footer/alt.png" alt="">
+                    <img src="./source/footer/grin.png" alt="">
+                </div>
+                <div class="footer__copy">
+                    <p>© 2021	
+                        «Федерация шахмат Алтайского края»<br>
+                        Общественная организация</p>
+                </div>
+            </div>
+            <div class="footer__right">
+                <nav class="footer__nav">
+                    <p>О проекте</p>
+                    <p>Педагоги</p>
+                    <p>Новости</p>
+                    <p>Мероприятия</p>
+                    <p>Фотогалерея</p>
+                    <p>Документы</p>
+                    <p>Контакты</p>
+                </nav>
+                <div class="footer__other">
+                    <a href="#" download>Политика конфиденциальности</a>
+                    <a href="https://zavod.team/" download>Сайт сделан на ZaVod</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
