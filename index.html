@@ -73,14 +73,14 @@
                 <div class="header__bottom">
                     <nav class="header__nav">
                         <ul class="header__navList">
-                            <li><span>О проекте</span></li>
-                            <li><span>Педагоги</span></li>
-                            <li><span>Новости</span></li>
-                            <li><span>Мероприятия</span></li>
-                            <li><span>Вопрос-Ответ</span></li>
-                            <li><span>Фотогалерея</span></li>
-                            <li><span>Документы</span></li>
-                            <li><span>Контакты</span></li>
+                            <li data-target="about"><span>О проекте</span></li>
+                            <li data-target="ped"><span>Педагоги</span></li>
+                            <li data-target="news"><span>Новости</span></li>
+                            <li data-target="merop"><span>Мероприятия</span></li>
+                            <li data-target="faq"><span>Вопрос-Ответ</span></li>
+                            <li data-target="photo"><span>Фотогалерея</span></li>
+                            <li data-target="docs"><span>Документы</span></li>
+                            <li data-target="contacts"><span>Контакты</span></li>
                         </ul>
                     </nav>
                 </div>
@@ -94,7 +94,7 @@
                     <h1>
                         Федерация шахмат Алтайского края
                     </h1>
-                    <button class="main__btn firstscreen__btn">
+                    <button class="main__btn firstscreen__btn goForm">
                         Записаться на занятие
                     </button>
                 </div>
@@ -102,10 +102,10 @@
             <img src="./source/firstscreen/logo.png" alt="Логотип" class="firstscreen__bg">
         </section>
 
-        <section class="about">
+        <section class="about" >
             <div class="container">
                 <div class="about__content">
-                    <h2>О проекте</h2>
+                    <h2 id="about">О проекте</h2>
                     <div class="about__txt">
                         <p>«Академия шахмат Алтайского края» создана в 2018 году при организационной поддержке Федерации
                         шахмат Алтайского края.</p>
@@ -133,7 +133,7 @@
 
         <section class="pedgogs">
             <div class="container">
-                <h2>
+                <h2 id="ped">
                     Педагоги
                 </h2>
                 <div class="pedgogs__content">
@@ -142,31 +142,39 @@
                             <p class="pedgogs__selectTxt">Выберите район</p>
                             <div class="pedgogs__selector">
                                 <div class="pedgogs__sity">
-                                    <p>Барнаул</p>
+                                    <p class="pedgogs__sityName">Барнаул</p>
                                 </div>
                                 <div class="pedgogs__sityArrow">
                                     <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M1.41 0.589966L6 5.16997L10.59 0.589966L12 1.99997L6 7.99997L0 1.99997L1.41 0.589966Z" fill="#5E747D"/>
                                     </svg>
                                 </div>
+                                <div class="pedgogs__sityAllWrap">
+                                    <div class="pedgogs__sityAll">
+                                        <ul>
+                                            <li>Барнаул</li>
+                                            <li>Заринск</li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
                         <div class="pedgogs__arrows">
-                            <div class="controlArr pedgogs__arrowsItem">
+                            <div class="controlArr pedgogs__arrowsItem pedgogs__arrowsItemLeft">
                                 <svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M7.41003 1.41L2.83003 6L7.41003 10.59L6.00003 12L3.407e-05 6L6.00003 -6.16331e-08L7.41003 1.41Z" fill="white"/>
                                 </svg>                                    
                             </div>
-                            <div class="controlArr pedgogs__arrowsItem">
+                            <div class="controlArr pedgogs__arrowsItem pedgogs__arrowsItemRight">
                                 <svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M0.589966 10.59L5.16997 6L0.589965 1.41L1.99997 -6.16331e-08L7.99997 6L1.99997 12L0.589966 10.59Z" fill="white"/>
                                 </svg>
                             </div>
                         </div>
                     </div>
-                    <div class="pedgogs__blocks">
-                        <div class="pedgogs__block">
+                    <div class="pedgogs__blocks" data-cat='Барнаул Заринск'>
+                        <div class="pedgogs__block Барнаул">
                             <div class="pedgogs__blockImg">
                                 <img src="./source/pedagogs/pep.jpg" alt="Косачев Дмитрий Юрьевич">
                             </div>
@@ -178,7 +186,7 @@
                                 <span class="add colorMain">Подробнее</span>
                             </div>
                         </div>
-                        <div class="pedgogs__block">
+                        <div class="pedgogs__block Барнаул">
                             <div class="pedgogs__blockImg">
                                 <img src="./source/pedagogs/pep.jpg" alt="Косачев Дмитрий Юрьевич">
                             </div>
@@ -190,7 +198,45 @@
                                 <span class="add colorMain">Подробнее</span>
                             </div>
                         </div>
-                        <div class="pedgogs__block">
+                        <div class="pedgogs__block Барнаул">
+                            <div class="pedgogs__blockImg">
+                                <img src="./source/pedagogs/pep.jpg" alt="Косачев Дмитрий Юрьевич">
+                            </div>
+                            <div class="pedgogs__blockTxt">
+                                <h3>Косачев Дмитрий Юрьевич</h3>
+                                <p>Директор Академии Шахмат Алтайского Края. Кандидат в мастера спорта по шахматам. Член Президиума Федерации шахмат Алтайского края. Председатель детско-юношеской комиссии. Ученики становились победителями первенства Барнаула, детских этапов кубков России и призерами Сибирского федерального округа. Высшее педагогическое образование. Тренерский стаж: 15 лет.</p>
+                            </div>
+                            <div class="pedgogs__blockAdd">
+                                <span class="add colorMain">Подробнее</span>
+                            </div>
+                        </div>
+                        <div class="pedgogs__block Барнаул">
+                            <div class="pedgogs__blockImg">
+                                <img src="./source/pedagogs/pep.jpg" alt="Косачев Дмитрий Юрьевич">
+                            </div>
+                            <div class="pedgogs__blockTxt">
+                                <h3>Косачев Дмитрий Юрьевич</h3>
+                                <p>Директор Академии Шахмат Алтайского Края. Кандидат в мастера спорта по шахматам. Член Президиума Федерации шахмат Алтайского края. Председатель детско-юношеской комиссии. Ученики становились победителями первенства Барнаула, детских этапов кубков России и призерами Сибирского федерального округа. Высшее педагогическое образование. Тренерский стаж: 15 лет.</p>
+                            </div>
+                            <div class="pedgogs__blockAdd">
+                                <span class="add colorMain">Подробнее</span>
+                            </div>
+                        </div>
+
+                        <div class="pedgogs__block Заринск">
+                            <div class="pedgogs__blockImg">
+                                <img src="./source/pedagogs/pep.jpg" alt="Косачев Дмитрий Юрьевич">
+                            </div>
+                            <div class="pedgogs__blockTxt">
+                                <h3>Косачев Дмитрий Юрьевич</h3>
+                                <p>Директор Академии Шахмат Алтайского Края. Кандидат в мастера спорта по шахматам. Член Президиума Федерации шахмат Алтайского края. Председатель детско-юношеской комиссии. Ученики становились победителями первенства Барнаула, детских этапов кубков России и призерами Сибирского федерального округа. Высшее педагогическое образование. Тренерский стаж: 15 лет.</p>
+                            </div>
+                            <div class="pedgogs__blockAdd">
+                                <span class="add colorMain">Подробнее</span>
+                            </div>
+                        </div>
+
+                        <div class="pedgogs__block Заринск">
                             <div class="pedgogs__blockImg">
                                 <img src="./source/pedagogs/pep.jpg" alt="Косачев Дмитрий Юрьевич">
                             </div>
@@ -209,7 +255,7 @@
 
         <section class="news">
             <div class="container">
-                <h2>Новости</h2>
+                <h2 id="news">Новости</h2>
                 <div class="news__content">
                     <div class="news__block">
                         <div class="news__blockPic">
@@ -283,14 +329,14 @@
         <section class="merop">
             <div class="container">
                 <div class="merop__top">
-                    <h2>Анонсы мероприятий</h2>
+                    <h2 id="merop">Анонсы мероприятий</h2>
                     <div class="pedgogs__arrows">
-                        <div class="controlArr merop__arrowsItem">
+                        <div class="controlArr merop__arrowsItem merop__arrowsLeft">
                             <svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M7.41003 1.41L2.83003 6L7.41003 10.59L6.00003 12L3.407e-05 6L6.00003 -6.16331e-08L7.41003 1.41Z" fill="white"/>
                             </svg>                                    
                         </div>
-                        <div class="controlArr merop__arrowsItem">
+                        <div class="controlArr merop__arrowsItem merop__arrowsRight">
                             <svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M0.589966 10.59L5.16997 6L0.589965 1.41L1.99997 -6.16331e-08L7.99997 6L1.99997 12L0.589966 10.59Z" fill="white"/>
                             </svg>
@@ -337,14 +383,14 @@
         <section class="foto">
             <div class="container">
                 <div class="foto__top">
-                    <h2>Фотогалерея</h2>
+                    <h2 id="photo">Фотогалерея</h2>
                     <div class="foto__arrows">
-                        <div class="controlArr foto__arrowsItem">
+                        <div class="controlArr foto__arrowsItem foto__arrowsItemLeft">
                             <svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M7.41003 1.41L2.83003 6L7.41003 10.59L6.00003 12L3.407e-05 6L6.00003 -6.16331e-08L7.41003 1.41Z" fill="white"/>
                             </svg>                                    
                         </div>
-                        <div class="controlArr foto__arrowsItem">
+                        <div class="controlArr foto__arrowsItem foto__arrowsRight">
                             <svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M0.589966 10.59L5.16997 6L0.589965 1.41L1.99997 -6.16331e-08L7.99997 6L1.99997 12L0.589966 10.59Z" fill="white"/>
                             </svg>
@@ -363,13 +409,16 @@
                     <div class="foto__block foto__blockVertical">
                         <img src="./source/photo/ex.png" alt="">
                     </div>
+                    <div class="foto__block foto__blockVertical">
+                        <img src="./source/firstscreen/bg.jpg" alt="">
+                    </div>
                 </div>
             </div>
         </section>
 
         <section class="faq">
             <div class="container">
-                <h2>Вопрос-Ответ</h2>
+                <h2 id="faq">Вопрос-Ответ</h2>
 
                 <div class="faq__content">
                     <div class="faq__block">
@@ -435,7 +484,7 @@
 
         <section class="docs">
             <div class="container">
-                <h2>Документация</h2>
+                <h2 id="docs">Документация</h2>
 
                 <div class="docs__content">
                     <a href="#" class="otherBlock docs__block">
@@ -537,7 +586,7 @@
 
         <section class="contacts">
             <div class="container">
-                <h2>Контакты</h2>
+                <h2 id="contacts">Контакты</h2>
                 <div class="contacts__content">
                     <div class="contacts__block">
                         <h3>Президент федерации:</h3>
@@ -641,21 +690,54 @@
             </div>
             <div class="footer__right">
                 <nav class="footer__nav">
-                    <p>О проекте</p>
-                    <p>Педагоги</p>
-                    <p>Новости</p>
-                    <p>Мероприятия</p>
-                    <p>Фотогалерея</p>
-                    <p>Документы</p>
-                    <p>Контакты</p>
+                    <p data-target="about">О проекте</p>
+                    <p data-target="ped">Педагоги</p>
+                    <p data-target="news">Новости</p>
+                    <p data-target="merop">Мероприятия</p>
+                    <p data-target="photo">Фотогалерея</p>
+                    <p data-target="photo">Документы</p>
+                    <p data-target="contacts">Контакты</p>
                 </nav>
                 <div class="footer__other">
-                    <a href="#" download>Политика конфиденциальности</a>
-                    <a href="https://zavod.team/" download>Сайт сделан на ZaVod</a>
+                    <a class="polit" href="#" download>Политика конфиденциальности</a>
+                    <a class="zavodLink" href="https://zavod.team/" download>Сайт сделан на <span class="zavod"><span class="zavodWrap">ZaVod</span></span></a>
                 </div>
             </div>
         </div>
     </footer>
+
+    <div class="popup" id="popForm">
+        <div class="popup__content" >
+            <div class="popup__exit">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z" fill="black"/>
+                </svg>
+            </div>
+            <div class="popup__contentWrap" id="formPopup">
+                <h3>Записаться на занятие </h3>
+                <h4>Заполните форму, и мы свяжемся с вами в ближайшее время</h4>
+                <form action="">
+                    <input type="text" placeholder="Ваше имя">
+                    <input type="phone" placeholder="Ваш телефон">
+                    <div class="district__selectorWrap">
+                        <div class="district__selectorArr">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7.41 8.59009L12 13.1701L16.59 8.59009L18 10.0001L12 16.0001L6 10.0001L7.41 8.59009Z" fill="#E3BA81"/>
+                            </svg>                                
+                        </div>
+                        <select class="district__selector" name="" id="">
+                            
+                        </select>
+                    </div>
+                    <button class="main__btn">Записаться на занятие</button>
+                </form>
+            </div>
+        </div>
+    
+    </div>
+    <script src="./js/script.js"></script>
+    <script src="./js/newslider.js"></script>
+    <script src="./js/simpleSlider.js"></script>
 </body>
 
 </html>
