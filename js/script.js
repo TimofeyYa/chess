@@ -91,4 +91,38 @@ window.addEventListener("DOMContentLoaded", ()=>{
             item.parentElement.classList.add('foto__blockHorizontal');
         }
     })
+
+    // укорачиваем текст
+    const pedgogs__blockTxt = document.querySelectorAll('.pedgogs__blockTxt p');
+    const pedgogs__blockAdd = document.querySelectorAll('.pedgogs__blockAdd');
+
+    pedgogs__blockTxt.forEach(item =>{
+        if (item.clientHeight > 220){
+            item.style.height = '220px';
+            console.log( item.parentElement);
+            item.parentElement.parentElement.querySelector('.pedgogs__blockAdd').style.display = 'block';
+        }
+    })
+
+    pedgogs__blockAdd.forEach(item =>{
+        item.addEventListener('click',()=>{
+            item.parentElement.querySelector('.pedgogs__blockTxt p').style.height = 'min-content';
+            item.style.display = 'none';
+            setTimeout(()=>{
+                window.addEventListener('click', closeClick);
+            }, 300)
+            
+        })
+    })
+
+    function closeClick(){     
+            pedgogs__blockTxt.forEach(item =>{
+                if (item.clientHeight > 220){
+                    item.style.height = '220px';
+                    console.log( item.parentElement);
+                    item.parentElement.parentElement.querySelector('.pedgogs__blockAdd').style.display = 'block';
+                }
+            })
+            window.removeEventListener('click', closeClick);
+    }
 })

@@ -9,6 +9,10 @@ window.addEventListener("DOMContentLoaded", ()=>{
     const foto__block = document.querySelectorAll('.foto__block');
     const foto__arrowsRight = document.querySelector('.foto__arrowsRight');
     const foto__arrowsItemLeft = document.querySelector('.foto__arrowsItemLeft');
+
+    const smi__block = document.querySelectorAll('.smi__block');
+    const smi__arrowsRight = document.querySelector('.smi__arrowsRight');
+    const smi__arrowsLeft = document.querySelector('.smi__arrowsLeft');
     
 
     function startSlide(arrLeft,arrRight,item){
@@ -47,5 +51,6 @@ window.addEventListener("DOMContentLoaded", ()=>{
     }
 
     startSlide(merop__arrowsLeft,merop__arrowsRight,merop__block);
+    startSlide(smi__arrowsLeft,smi__arrowsRight,smi__block);
     startSlide(foto__arrowsItemLeft,foto__arrowsRight,foto__block);
 })
